@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.interface {
+  border-radius: 20px;
+}
+.interface > h1 {
+  margin-top: 10px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 80px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.input-field {
+  width: 100%;
+  margin: 5px;
+
+  position: relative;
+}
+.input-field span {
+  position: absolute;
+  top: 11px;
+  left: 15px;
+  color: #4a5565;
+
+  transition: all 0.2s ease;
+}
+.input-field input {
+  border: none;
+  outline: none;
+  
+  border-bottom: 3px solid #d1d5dc;
+  width: 100%;
+  
+  padding: 10px;
+  height: 50px;
+}
+.input-field input:focus + span {
+  top: -10px;
+  font-size: .85em;
+}
+.input-field input:valid + span {
+  top: -10px;
+  font-size: 0.85em;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+form .send-btn {
+  background-color: #155dfc;
+  color: #fff;
+
+  border-radius: 10px;
+
+  margin-top: 50px;
+
+  width: 100%;
+  padding: 10px;
+
+  height: 60px;
+  font-size: 1.6em;
+
+  cursor: pointer;
 }
+form .send-btn:hover {
+  background-color: #1148bf;
+}
+
